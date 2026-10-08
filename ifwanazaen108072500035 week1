@@ -1,3 +1,5 @@
+<img width="446" height="382" alt="Screenshot 2026-10-08 132637" src="https://github.com/user-attachments/assets/ead072be-0110-4efa-9dea-b62537cd1ccb" />
+<img width="446" height="382" alt="Screenshot 2026-10-08 132637" src="https://github.com/user-attachments/assets/3bec33fc-7614-475b-8e5e-540457c1f528" />
 # Laporan Praktikum Sistem Operasi
 ## Modul 1, 2, dan 3: Instalasi, Arsitektur, dan Eksplorasi Xinu OS
 
@@ -46,7 +48,7 @@ $ make
 **Hasil:** 
 Proses `make` akan mengompilasi seluruh *source code* C menjadi *image* bernama `xinu.elf`. Sistem juga secara otomatis menyalin *image* tersebut ke direktori server TFTP (`/srv/tftp/xinu.boot`) agar siap diunduh oleh *Backend VM*.
 
-![Terminal Compile Xinu](assets/Screenshot2026-10-05140657.png)
+<img width="446" height="382" alt="Screenshot 2026-10-08 132637" src="https://github.com/user-attachments/assets/027b6c58-683a-4364-acad-05f16fe36f86" />
 
 *Gambar 1: Proses kompilasi source code Xinu menggunakan perintah `make` pada Development-System VM.*
 
@@ -57,7 +59,7 @@ Selanjutnya, **Backend VM** dijalankan. Karena Backend VM tidak memiliki hardisk
 3. Backend VM mengunduh file `xinu.boot` melalui protokol TFTP.
 4. Xinu OS berhasil dimuat ke memori dan berjalan.
 
-![Booting Backend VM](assets/backend.png)
+<img width="525" height="356" alt="Screenshot 2026-10-08 132829" src="https://github.com/user-attachments/assets/75c72550-5625-405a-aa5f-3073e483373f" />
 
 *Gambar 2: Tampilan Backend VM saat melakukan booting melalui jaringan (PXE) dan memuat GRUB.*
 
@@ -71,7 +73,8 @@ $ sudo minicom
 **Hasil:** 
 Terminal Development-System kini terhubung langsung ke *console* Xinu di Backend VM. Prompt terminal berubah dari `xinu@xinu-develop-end:$` menjadi **`xsh$`**, yang menandakan bahwa praktikan kini berada di dalam *Xinu Shell*.
 
-![Koneksi Minicom](assets/minicom.png)
+<img width="409" height="335" alt="Screenshot 2026-10-08 132937" src="https://github.com/user-attachments/assets/fc9755cd-c0c6-4192-8f20-2a46314180c6" />
+
 
 *Gambar 3: Koneksi berhasil melalui Minicom, ditandai dengan munculnya prompt `xsh$`.*
 
@@ -81,8 +84,8 @@ Pada prompt `xsh$`, praktikan dapat memberikan perintah langsung ke kernel Xinu.
 ```bash
 xsh$ help
 ```
+<img width="409" height="335" alt="Screenshot 2026-10-08 132937" src="https://github.com/user-attachments/assets/d24da606-91be-476b-a34b-42c4808db669" />
 
-![Perintah Help Xinu](assets/image.png)
 
 *Gambar 4: Output dari perintah `help` yang menampilkan daftar command bawaan Xinu OS.*
 
