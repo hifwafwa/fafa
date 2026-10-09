@@ -38,7 +38,7 @@ Langkah pertama dilakukan pada **Development-System VM**. VM dijalankan dan dila
 - **Password:** `xinurocks`
 
 Setelah masuk ke terminal, praktikan berpindah ke direktori kompilasi Xinu dan membersihkan *build* sebelumnya agar memastikan *image* yang dikompilasi adalah yang terbaru.
-```bash
+```bash 
 $ cd xinu/compile
 $ make clean
 $ make
@@ -46,6 +46,7 @@ $ make
 **Hasil:** 
 Proses `make` akan mengompilasi seluruh *source code* C menjadi *image* bernama `xinu.elf`. Sistem juga secara otomatis menyalin *image* tersebut ke direktori server TFTP (`/srv/tftp/xinu.boot`) agar siap diunduh oleh *Backend VM*.
 
+<img width="446" height="382" alt="Screenshot 2026-10-08 132637" src="https://github.com/user-attachments/assets/5436319f-94e2-4de8-bb8c-ca1ebbd23c0b" />
 
 
 *Gambar 1: Proses kompilasi source code Xinu menggunakan perintah `make` pada Development-System VM.*
@@ -57,6 +58,7 @@ Selanjutnya, **Backend VM** dijalankan. Karena Backend VM tidak memiliki hardisk
 3. Backend VM mengunduh file `xinu.boot` melalui protokol TFTP.
 4. Xinu OS berhasil dimuat ke memori dan berjalan.
 
+<img width="525" height="356" alt="Screenshot 2026-10-08 132829" src="https://github.com/user-attachments/assets/11dff8c1-93b0-4dc6-9150-34013f044323" />
 
 
 *Gambar 2: Tampilan Backend VM saat melakukan booting melalui jaringan (PXE) dan memuat GRUB.*
@@ -71,6 +73,7 @@ $ sudo minicom
 **Hasil:** 
 Terminal Development-System kini terhubung langsung ke *console* Xinu di Backend VM. Prompt terminal berubah dari `xinu@xinu-develop-end:$` menjadi **`xsh$`**, yang menandakan bahwa praktikan kini berada di dalam *Xinu Shell*.
 
+<img width="409" height="335" alt="Screenshot 2026-10-08 132937" src="https://github.com/user-attachments/assets/3ef3ab9a-f8ea-4a5c-a941-a175dc593ed2" />
 
 
 *Gambar 3: Koneksi berhasil melalui Minicom, ditandai dengan munculnya prompt `xsh$`.*
@@ -81,6 +84,7 @@ Pada prompt `xsh$`, praktikan dapat memberikan perintah langsung ke kernel Xinu.
 ```bash
 xsh$ help
 ```
+<img width="407" height="337" alt="Screenshot 2026-10-08 133043" src="https://github.com/user-attachments/assets/713580ff-d8c8-47c0-935d-cc498097e96d" />
 
 
 *Gambar 4: Output dari perintah `help` yang menampilkan daftar command bawaan Xinu OS.*
@@ -102,6 +106,7 @@ Berdasarkan praktikum yang telah dilakukan, terdapat beberapa poin penting terka
    Shell pada Xinu (`shell.c`) sangat minimalis. Ia memproses *input* string, mengekstrak nama perintah, dan memanggil *system call* atau fungsi internal kernel yang sesuai. Perintah seperti `help`, `uptime`, atau `kill` dieksekusi langsung di ruang kernel karena Xinu tidak memiliki pemisahan *user-space* dan *kernel-space* yang ketat seperti Linux modern.
 
 ---
+<img width="525" height="356" alt="Screenshot 2026-10-08 132829" src="https://github.com/user-attachments/assets/b789a144-088d-42e2-a142-a27a32f72fc9" />
 
 ## 5. Kesimpulan
 1. Praktikan telah memahami tata tertib laboratorium dan berhasil menyiapkan lingkungan *cross-development* menggunakan Oracle VM VirtualBox.
