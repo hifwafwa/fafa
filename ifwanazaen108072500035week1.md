@@ -106,7 +106,6 @@ Berdasarkan praktikum yang telah dilakukan, terdapat beberapa poin penting terka
    Shell pada Xinu (`shell.c`) sangat minimalis. Ia memproses *input* string, mengekstrak nama perintah, dan memanggil *system call* atau fungsi internal kernel yang sesuai. Perintah seperti `help`, `uptime`, atau `kill` dieksekusi langsung di ruang kernel karena Xinu tidak memiliki pemisahan *user-space* dan *kernel-space* yang ketat seperti Linux modern.
 
 ---
-<img width="525" height="356" alt="Screenshot 2026-10-08 132829" src="https://github.com/user-attachments/assets/b789a144-088d-42e2-a142-a27a32f72fc9" />
 
 ## 5. Kesimpulan
 1. Praktikan telah memahami tata tertib laboratorium dan berhasil menyiapkan lingkungan *cross-development* menggunakan Oracle VM VirtualBox.
